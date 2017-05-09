@@ -108,7 +108,7 @@ class Flight:
             for letter in seat_letters:
                 passenger = self._seating[row][letter]
                 if passenger is not None:
-                    yield (passenger, "{}{}".format[row][letter])
+                    yield (passenger, "{}{}".format(row,letter))
 
 
 class Aircraft:
