@@ -97,7 +97,18 @@ class Flight:
                    for row in self._seating
                    if row is not None)
 
+    def make_boarding_cards(self, card_printer):
+        for passenger, seat in sorted(self._passenger_seats()):
+            card_printer(passenger, seat, self.number(), self.aircraft_model())
 
+    def _passenger_seats(self):
+        """"An iterable series of passenger seating allocations."""
+        row_numbers, seat_letters = self._aircraft.seating_plan()
+        for row in row_numbers:
+            for letter in seat_letters:
+                passenger = self._seating[row][letter]
+                if passenger is not None:
+                    yield (passenger, "{}{}".format[row][letter])
 
 
 class Aircraft:
