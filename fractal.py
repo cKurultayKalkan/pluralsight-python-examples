@@ -4,7 +4,7 @@ import math
 
 
 def mandel(real, imag):
-    """"Compute a point in the Mandelbrot.
+    """Compute a point in the Mandelbrot.
 
     The logarithm  of number of  iterations needed to
     determine whether a complex point is in the
@@ -37,7 +37,7 @@ def mandelbrot(size_x, size_y):
 
     Returns:
         A list of lists of integers in the range 0-255.
-    """"
+    """
 
     return [[mandel((3.5 * x / size_x) - 2.5,
                     (2.0 * y / size_y) - 1.0)
