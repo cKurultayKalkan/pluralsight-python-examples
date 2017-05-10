@@ -108,7 +108,7 @@ class Flight:
             for letter in seat_letters:
                 passenger = self._seating[row][letter]
                 if passenger is not None:
-                    yield (passenger, "{}{}".format(row,letter))
+                    yield (passenger, "{}{}".format(row, letter))
 
 
 class Aircraft:
@@ -127,6 +127,34 @@ class Aircraft:
     def seating_plan(self):
         return (range(1, self._num_rows + 1),
                 "ABCDEFGHJK"[:self._num_seats_per_row])
+
+
+class Aircraft:
+    def __init__(self, registration):
+        self._registration = registration
+
+    def registration(self):
+        return self._registration
+
+    def num_seats(self):
+        rows, rows_seats = self.seating_plan()
+        return len(rows) * len(rows_seats)
+
+
+class Airbus319(Aircraft):
+    def model(self):
+        return "Airbus319"
+
+    def seating_plan(self):
+        return range(1, 23), "ABCDEF"
+
+
+class Boeing777(Aircraft):
+    def model(self):
+        return "Boeing777"
+
+    def seating_plan(self):
+        return range(1, 56), "ABCDEFGJK"
 
 
 def make_flight():
