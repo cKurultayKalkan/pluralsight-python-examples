@@ -1,2 +1,2 @@
 # pluralsight-python-examples
-Python fundamentals course exercies in pluralsight. Austin Bingham and Robert Smallshire 
+Exercises in "Python Fundamentals" course by Austin Bingham and Robert Smallshire on pluralsight.
