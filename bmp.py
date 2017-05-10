@@ -57,3 +57,12 @@ def write_grayscale(filename, pixels):
             bmp.write(padding)
 
         # End of file
+        eof_bookmark = bmp.tell()
+
+        # Fill in file size placeholder
+        bmp.seek(size_bookmark)
+        bmp.write(_int32_to_bytes(eof_bookmark))
+
+        # Fill in pixel offset placeholder
+        bmp.seek(pixes_offset_bookmark)
+        bmp.write(_int32_to_bytes(pixel_data_bookmark))
