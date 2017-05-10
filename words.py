@@ -17,11 +17,10 @@ def print_words(story_words):
         print(word)
 
 
-def main():
-    url = sys.argv[1]
+def main(url):
     words = fetch_words(url)
     print_words(words)
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1])
