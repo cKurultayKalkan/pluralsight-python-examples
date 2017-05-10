@@ -1,5 +1,7 @@
 """Demonstrate raiding a refrigerator"""
 
+from contextlib import closing
+
 
 class RefrigeratorRaider:
     """Raid a refrigerator"""
@@ -18,7 +20,6 @@ class RefrigeratorRaider:
 
 
 def raid(food):
-    r = RefrigeratorRaider()
-    r.open()
-    r.take(food)
-    r.close()
+    with closing(RefrigeratorRaider()) as r:
+        r.open()
+        r.take(food)
