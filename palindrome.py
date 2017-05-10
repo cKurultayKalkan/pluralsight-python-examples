@@ -18,7 +18,7 @@ def digits(x):
     while x != 0:
         div, mod = divmod(x, 10)
         digs.append(mod)
-        x = mod
+        x = div
     return digs
 
 
