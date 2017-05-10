@@ -61,14 +61,14 @@ def write_grayscale(filename, pixels):
 
         # Fill in file size placeholder
         bmp.seek(size_bookmark)
-        bmp.write(_int32_to_bytes(eof_bookmark))
+        bmp.write(_int_32_to_bytes(eof_bookmark))
 
         # Fill in pixel offset placeholder
         bmp.seek(pixes_offset_bookmark)
-        bmp.write(_int32_to_bytes(pixel_data_bookmark))
+        bmp.write(_int_32_to_bytes(pixel_data_bookmark))
 
 
-def _int32_to_bytes(i):
+def _int_32_to_bytes(i):
     """"Convert an integer to four bytes in little-endian format."""
     return bytes((i & 0xff,
                   i >> 8 & 0xff,
